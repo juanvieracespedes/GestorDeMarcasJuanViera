@@ -11,11 +11,6 @@ let person = {
     }
   };
 
-  let marcaIngreso = 8
-  let marcaDes = 12
-  let marcaFinDes = "12:30"
-  let marcaSalida = 16
-
   //new person = new Object ();
 
   person.account.logUser = prompt("ingrese nombre de usuario");
@@ -29,23 +24,48 @@ else {
     alert ("Usuario y contraseña incorrecta")
 }
 
-function ingresa(){
-    alert("Marcaste tu entrada a las " + marcaIngreso + " , que tengas buena jornada")
-}
+/*class Usarios {
+    constructor(name, age, account) {
+        this.name = document.getElementById("name")
+        this.age = ParseInt(document.getElementById("age"))
+        this.account = document.getElementById("account")
+    }
 
-function desc(){
-    alert("Incicio de descanso a las " + marcaDes)
 }
-
-function descFin(){
-    alert("Terminaste tu descanso a las " + marcaFinDes)
-}
-function marcar(){
-    let myShift = marcaSalida - marcaIngreso
-    alert("Trabajaste " + myShift + " horas, que descanses!")
-}
+*/
 
 
+function settingClock() {
+    let today = new Date();
+    let hour = today.getHours();
+    let minute = today.getMinutes();
+    let second = today.getSeconds();
+    
+
+    if(hour < 10) {
+            hour = "0" + hour; 
+    } 
+    if (minute < 10) {
+            minute = "0" + minute;
+    }
+    if (second < 10) {
+            second = "0" + second;
+    }
+
+
+    let frame = document.getElementById("clock");
+    frame.innerHTML = hour + ":" + minute + ":" + second;    
+}
+
+setInterval(settingClock, 500);
+
+
+document.getElementById("punchIn").addEventListener("click", function() {
+    let date = new Date();
+    let time = date.toLocaleTimeString();
+    document.getElementById("timePunchIn").innerHTML = time;
+  });
+  
 
 
 

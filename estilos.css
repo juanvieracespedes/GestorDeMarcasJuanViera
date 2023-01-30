@@ -1,34 +1,59 @@
-body {
-    background-color: cadetblue;
-}
-
 header {
-    
-    font-size: larger;
-    background-color: aliceblue;
-}
-
-.navMain{
-    justify-content: left;
+    background-color: rgba(244, 244, 244, 0.8);
     display: flex;
+    justify-content: center;
     align-items: center;
-
+    height: 100px;
 }
-.titulo{
-    justify-content: right;
+
+.navMain {
     display: flex;
-    align-items: center;
-    font-style: italic black;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 20px;
 }
 
-.workTime{
-    background-color: floralwhite;
+.nav-item {
+    margin-left: 20px;
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(66, 104, 146);
+}
+
+.titulo h1 {
+    color: rgb(66, 104, 146);
+    font-size: 36px;
+}
+
+.workTimeArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.clock {
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 
 .punchesButton {
-    margin-top: 200px;
-    margin-left: 100px;
-    margin-bottom: 200px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
+.punchesButton button {
+    margin-left: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+}
 
+p {
+    margin: 0;
+}
