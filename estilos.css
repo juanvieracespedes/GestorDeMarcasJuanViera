@@ -60,3 +60,14 @@ p {
     border-radius: 5px;
     border-color: black;
 }
+
+
+.loginContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(66, 104, 146);
+}

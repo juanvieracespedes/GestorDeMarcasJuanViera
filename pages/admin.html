@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator</title>
+    <link rel="stylesheet" href="../estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <div class="navMain">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Configuración</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dispositivos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="titulo">
+            <h1>MyPunches.com <p style="color: blue;">admin</p></h1> 
+        </div>
+    </header>
+
+    <div id="userCreator">
+        <form class="row g-3 needs-validation" id="userForm" novalidate>
+            <div class="col-md-4">
+              <label for="validationCustom01" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationCustom02" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationCustomUsername" class="form-label">Username</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                  Please choose a username.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationCustom03" class="form-label">Dirección</label>
+              <input type="text" class="form-control" id="validationCustom03" required>
+              <div class="invalid-feedback">
+                Por favor ingresese una Dirección.
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label for="validationCustom04" class="form-label">Departamento</label>
+              <select class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">Elegir...</option>
+                <option>Montevideo</option>
+                <option>Artigas</option>
+                <option>Canelones</option>
+                <option>Colonia</option>
+                <option>Durazno</option>
+                <option>Flores</option>
+                <option>Florida</option>
+                <option>Lavalleja</option>
+                <option>Maldonado</option>
+                <option>Paysandu</option>
+                <option>Rio Negro</option>
+                <option>Rivera</option>
+                <option>Rocha</option>
+                <option>Salto</option>
+                <option>San Jose</option>
+                <option>Soriano</option>
+                <option>Tacuarembo</option>
+                <option>Treinta y Tres</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid state.
+              </div>
+            </div>
+            <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">Sección</label>
+                <select class="form-select" id="validationCustom05" required>
+                  <option selected disabled value="">Elegir...</option>
+                  <option>Recursos Humanos</option>
+                  <option>Call Center</option>
+                  <option>Administración</option>
+                  <option>Contable</option>
+                  <option>Juridica</option>
+                  <option>Informatica</option>
+                  <option>Atencion al cliente</option>
+                </select>
+                <div class="invalid-feedback">
+                  Por favor, elija una sección valida.
+                </div>
+              </div>
+            <div class="col-md-3">
+              <label for="validationCustom05" class="form-label">Telefono</label>
+              <input type="text" class="form-control" id="validationCustom05" required>
+              <div class="invalid-feedback">
+                Por favor, proporcione un telefono.
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                  Los datos son correctos
+                </label>
+                <div class="invalid-feedback">
+                  Debe confirmar que los datos sean correctos.
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit" onclick="agregarUsuario()">Agregar usuario</button>
+            </div>
+          </form>
+    </div>
+
+    <div id="listaUsuarios">
+      <table id="tablaUsuarios" class="table">
+          <thead>
+              <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">Dirección</th>
+                  <th scope="col">Departamento</th>
+                  <th scope="col">Sección</th>
+                  <th scope="col">Teléfono</th>
+              </tr>
+          </thead>
+          <tbody>
+              <!-- Aquí se mostrarán los usuarios creados -->
+          </tbody>
+      </table>
+  </div>
+  
+
+    <script src="admin.js"></script>
+    
+</body>
+</html>
