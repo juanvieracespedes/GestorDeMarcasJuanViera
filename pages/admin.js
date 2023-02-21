@@ -1,53 +1,65 @@
-function agregarUsuario(event) {
-    event.preventDefault();
+
+
+
+function agregarUsuario() {
+    // Obtener los valores del formulario
+
+    const usuarios = [];
+
+    const nombre = document.getElementById('campoNombre').value;
+    const apellido = document.getElementById('campoApellido').value;
+    const username = document.getElementById('campoUsername').value;
+    const correo = document.getElementById('campoCorreoe').value;
+    const seccion = document.getElementById('campoSeccion').value;
+    const telefono = document.getElementById('campoTelefono').value;
     
-     // Crear un objeto usuario con los datos ingresados
-   let usuario = {
-    nombre: "Juan",
-    apellido: "Viera",
-    username: "jviera",
-    direccion: "Juan Mendez 1234",
-    departamento: departamento,
-    seccion: seccion,
-    telefono: "1234567"
+    // Crear un nuevo objeto usuario
+    
+    let nuevoUsuario = {
+      nombre,
+      apellido,
+      username,
+      correo,
+      seccion,
+      telefono
     };
     
+    // Agregar el nuevo usuario al array de usuarios
+    usuarios.push(nuevoUsuario);
     
-    let nombre = document.getElementById("validationCustom01").value;
-    let apellido = document.getElementById("validationCustom02").value;
-    let username = document.getElementById("validationCustomUsername").value;
-    let direccion = document.getElementById("validationCustom03").value;
-    let departamento = document.getElementById("validationCustom04").value;
-    let seccion = document.getElementById("validationCustom05").value;
-    let telefono = document.getElementById("validationCustom06").value;
-
-
-    console.log(usuario)
-
-    let usuarios = [usuario];
-
-    localStorage.setItem("usuarios", usuarios);
-
-    console.log(localStorage.getItem(usuarios, JSON.parse(usuarios)));
-
-    // Agregar una nueva fila a la tabla con los datos del usuario
-    let tabla = document.getElementById("tablaUsuarios").getElementsByTagName('tbody')[0];
-    let fila = tabla.insertRow();
-    let celdaNombre = fila.insertCell(0);
-    let celdaApellido = fila.insertCell(1);
-    let celdaUsername = fila.insertCell(2);
-    let celdaDireccion = fila.insertCell(3);
-    let celdaDepartamento = fila.insertCell(4);
-    let celdaSeccion = fila.insertCell(5);
-    let celdaTelefono = fila.insertCell(6);
-    celdaNombre.innerHTML = nombre;
-    celdaApellido.innerHTML = apellido;
-    celdaUsername.innerHTML = username;
-    celdaDireccion.innerHTML = direccion;
-    celdaDepartamento.innerHTML = departamento;
-    celdaSeccion.innerHTML = seccion;
-    celdaTelefono.innerHTML = telefono;
-
+    // Guardar el array de usuarios en localStorage
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    
     // Limpiar el formulario
-    document.getElementById("userCreator").reset();
-}
+    document.getElementById('campoNombre').value = '';
+    document.getElementById('campoApellido').value = '';
+    document.getElementById('campoUsername').value = '';
+    document.getElementById('campoCorreoe').value = '';
+    document.getElementById('campoSeccion').value = '';
+    document.getElementById('campoTelefono').value = '';
+
+// Obtener el array de usuarios guardado en localStorage
+    const usuariosGuardados = localStorage.getItem('usuarios');
+   
+    
+
+    const listaUsuarios = JSON.parse(usuariosGuardados);
+   
+    usuarios.forEach(nuevoUsuario => {
+        // Agregar una nueva fila a la tabla con los datos del usuario
+       let tabla = document.getElementById("tablaUsuarios").getElementsByTagName('tbody')[0];
+       let fila = tabla.insertRow();
+       let celdaNombre = fila.insertCell(0);
+       let celdaApellido = fila.insertCell(1);
+       let celdaUsername = fila.insertCell(2);
+       let celdaCorreoe = fila.insertCell(3);
+       let celdaSeccion = fila.insertCell(4);
+       let celdaTelefono = fila.insertCell(5);
+       celdaNombre.innerHTML = JSON.parse(usuario.nombre);
+       celdaApellido.innerHTML = JSON.parse(usuario.apellido);
+       celdaUsername.innerHTML = JSON.parse(usuario.username);
+       celdaCorreoe.innerHTML = JSON.parse(usuario.correo);
+       celdaSeccion.innerHTML = JSON.parse(usuario.seccion);
+       celdaTelefono.innerHTML = JSON.parse(usuario.telefono);
+  }
+    )}

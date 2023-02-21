@@ -38,14 +38,14 @@
         <form class="row g-3 needs-validation" id="userForm" novalidate>
             <div class="col-md-4">
               <label for="validationCustom01" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="validationCustom01" required>
+              <input type="text" class="form-control" id="campoNombre" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <div class="col-md-4">
               <label for="validationCustom02" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="validationCustom02" required>
+              <input type="text" class="form-control" id="campoApellido" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -54,49 +54,22 @@
               <label for="validationCustomUsername" class="form-label">Username</label>
               <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                <input type="text" class="form-control" id="campoUsername" aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
                   Please choose a username.
                 </div>
               </div>
             </div>
             <div class="col-md-6">
-              <label for="validationCustom03" class="form-label">Dirección</label>
-              <input type="text" class="form-control" id="validationCustom03" required>
+              <label for="validationCustom03" class="form-label">Correo electronico</label>
+              <input type="text" class="form-control" id="campoCorreoe" required>
               <div class="invalid-feedback">
-                Por favor ingresese una Dirección.
-              </div>
-            </div>
-            <div class="col-md-3">
-              <label for="validationCustom04" class="form-label">Departamento</label>
-              <select class="form-select" id="validationCustom04" required>
-                <option selected disabled value="">Elegir...</option>
-                <option>Montevideo</option>
-                <option>Artigas</option>
-                <option>Canelones</option>
-                <option>Colonia</option>
-                <option>Durazno</option>
-                <option>Flores</option>
-                <option>Florida</option>
-                <option>Lavalleja</option>
-                <option>Maldonado</option>
-                <option>Paysandu</option>
-                <option>Rio Negro</option>
-                <option>Rivera</option>
-                <option>Rocha</option>
-                <option>Salto</option>
-                <option>San Jose</option>
-                <option>Soriano</option>
-                <option>Tacuarembo</option>
-                <option>Treinta y Tres</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid state.
+                Por favor ingresese un Correo Electronico.
               </div>
             </div>
             <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Sección</label>
-                <select class="form-select" id="validationCustom05" required>
+                <select class="form-select" id="campoSeccion" required>
                   <option selected disabled value="">Elegir...</option>
                   <option>Recursos Humanos</option>
                   <option>Call Center</option>
@@ -112,7 +85,7 @@
               </div>
             <div class="col-md-3">
               <label for="validationCustom05" class="form-label">Telefono</label>
-              <input type="text" class="form-control" id="validationCustom05" required>
+              <input type="text" class="form-control" id="campoTelefono" required>
               <div class="invalid-feedback">
                 Por favor, proporcione un telefono.
               </div>
@@ -142,7 +115,6 @@
                   <th scope="col">Apellido</th>
                   <th scope="col">Username</th>
                   <th scope="col">Dirección</th>
-                  <th scope="col">Departamento</th>
                   <th scope="col">Sección</th>
                   <th scope="col">Teléfono</th>
               </tr>
@@ -158,3 +130,4 @@
     
 </body>
 </html>
+
