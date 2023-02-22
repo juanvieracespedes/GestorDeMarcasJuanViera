@@ -81,7 +81,7 @@
               celdaTelefono.innerHTML = usuario.telefono;
 
             }
-            const refrescarUsers = document.getElementById("botonRefreshUsuarios");
+            const refrescarUsers = document.getElementById("refreshUsuarios");
             refrescarUsers.addEventListener("click", refreshUsuarios);
           };
             
