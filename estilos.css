@@ -87,3 +87,10 @@ p {
     overflow-y: scroll;
     border-radius: 50px;
 }
+
+.botonRefresh {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+}

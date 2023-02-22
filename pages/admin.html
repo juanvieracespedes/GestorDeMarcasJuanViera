@@ -102,12 +102,15 @@
               </div>
             </div>
             <div class="col-12">
-              <button class="btn btn-primary" type="submit" onclick="agregarUsuario()">Agregar usuario</button>
+              <button class="btn btn-primary" type="submit" id= "botonSubmit" onclick="agregarUsuario()">Agregar usuario</button>
             </div>
           </form>
     </div>
 
+    <button  class="botonRefresh" id="refreshUsuarios">Refrescar</button>
+
     <div id="listaUsuarios">
+
       <table id="tablaUsuarios" class="table">
           <thead>
               <tr>

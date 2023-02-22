@@ -43,23 +43,46 @@
         // Mostrar la lista de usuarios en la tabla
         const tabla = document.getElementById('tablaUsuarios').getElementsByTagName('tbody')[0];
         tabla.innerHTML = '';
-      
-        usuarios.forEach((nuevoUsuario) => {
-          // Agregar una nueva fila a la tabla con los datos del usuario
-          let fila = tabla.insertRow();
-          let celdaNombre = fila.insertCell(0);
-          let celdaApellido = fila.insertCell(1);
-          let celdaUsername = fila.insertCell(2);
-          let celdaCorreoe = fila.insertCell(3);
-          let celdaSeccion = fila.insertCell(4);
-          let celdaTelefono = fila.insertCell(5);
-      
-          celdaNombre.innerHTML = nuevoUsuario.nombre;
-          celdaApellido.innerHTML = nuevoUsuario.apellido;
-          celdaUsername.innerHTML = nuevoUsuario.username;
-          celdaCorreoe.innerHTML = nuevoUsuario.correo;
-          celdaSeccion.innerHTML = nuevoUsuario.seccion;
-          celdaTelefono.innerHTML = nuevoUsuario.telefono;
-        });
-      }
-      
+        };
+
+        function refreshUsuarios() {
+            // Obtener la lista de usuarios guardados en localStorage
+            const usuariosGuardados = localStorage.getItem('usuarios');
+            let usuarios = [];
+          
+            if (usuariosGuardados) {
+              usuarios = JSON.parse(usuariosGuardados);
+            }
+          
+            // Obtener la tabla de usuarios
+            const tabla = document.getElementById('tablaUsuarios').getElementsByTagName('tbody')[0];
+          
+            // Limpiar la tabla
+            tabla.innerHTML = '';
+          
+            // Iterar sobre la lista de usuarios y agregar una fila por cada usuario
+            for (let i = 0; i < usuarios.length; i++) {
+              const usuario = usuarios[i];
+          
+              // Agregar una nueva fila a la tabla con los datos del usuario
+              let fila = tabla.insertRow();
+              let celdaNombre = fila.insertCell(0);
+              let celdaApellido = fila.insertCell(1);
+              let celdaUsername = fila.insertCell(2);
+              let celdaCorreoe = fila.insertCell(3);
+              let celdaSeccion = fila.insertCell(4);
+              let celdaTelefono = fila.insertCell(5);
+          
+              celdaNombre.innerHTML = usuario.nombre;
+              celdaApellido.innerHTML = usuario.apellido;
+              celdaUsername.innerHTML = usuario.username;
+              celdaCorreoe.innerHTML = usuario.correo;
+              celdaSeccion.innerHTML = usuario.seccion;
+              celdaTelefono.innerHTML = usuario.telefono;
+
+            }
+            const refrescarUsers = document.getElementById("botonRefreshUsuarios");
+            refrescarUsers.addEventListener("click", refreshUsuarios);
+          };
+            
+    
