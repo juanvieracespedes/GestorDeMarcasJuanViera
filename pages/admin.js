@@ -1,4 +1,7 @@
 
+const refrescarUsers = document.getElementById("refreshUsuarios");
+refrescarUsers.addEventListener("click", refreshUsuarios);
+
     function agregarUsuario() {
         // Obtener los valores del formulario
         const nombre = document.getElementById('campoNombre').value;
@@ -81,8 +84,7 @@
               celdaTelefono.innerHTML = usuario.telefono;
 
             }
-            const refrescarUsers = document.getElementById("refreshUsuarios");
-            refrescarUsers.addEventListener("click", refreshUsuarios);
+
           };
             
     
