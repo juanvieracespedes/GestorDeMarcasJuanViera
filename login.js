@@ -1,41 +1,37 @@
-//------------------------------- aqui deberia tener algo para poder enlazar a los usuarios guardados en la pagina de admin.html y usar eso para validad la entrar ---------------------------------
 
-
-let person = {
-    name: {
-      first: "Juan",
-      last: "Viera",
-    },
-    age: 28,
-    account: {
-        logUser: "jviera",
-        passUser: "1234"
-    }
-  };
-
-
-
-
-
-
-
-
-
-
-
-// --------------------------- login primitivo de user ------------------------------------------------
-function login() {
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    
-    if (username === "jviera" && password === "1234") {
-      // Las credenciales son válidas, redirigir al usuario a la nueva página
-      window.location.href = "index.html"; // Cambia esta URL por la que desees redirigir al usuario
-      alert("Bienvenido " + person.name.first + " " + person.name.last)
-    } else {
-      // Las credenciales son inválidas, muestra un mensaje de error
-      alert("Nombre de usuario o contraseña incorrectos. Por favor, inténtelo de nuevo.");
-    }
+document.querySelector('form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita que el formulario se envíe automáticamente
+  
+  // Accede a los valores del formulario
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+  
+  // Comprueba si el usuario y la contraseña son válidos
+  if (isValidLogin(username, password)) {
+    swal({
+      icon: "success",
+    });;
+    // Aquí puedes redirigir al usuario a otra página
+  } else {
+    swal({
+      title: "Error",
+      text: "Usuario o/y contraseña incorrectos",
+      icon: "error",
+    });;
   }
+;
+  })
 
-//esto se cambiará por un login que matchee con una base de datos ya creada previamente (o esa es la idea je)
+  function isValidLogin(username, password) {
+    // Accede a los usuarios almacenados en el localStorage
+    var users = JSON.parse(localStorage.getItem('usuarios'));
+    
+    // Busca el usuario y la contraseña correspondientes
+    for (var i = 0; i < users.length; i++) {
+      if (username === users[i].username && password === users[i].password) {
+        return true;
+      }
+    }
+    
+    return false;
+  }
